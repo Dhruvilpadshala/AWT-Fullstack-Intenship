@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <p>type something and then click or tab out of the input</p>
+    <input type="text" value="type something">
+    <script>
+        $('input').on('blur',function(){
+            $(this).val(function(i,val){
+                return val.toUpperCase();
+            })
+        })
+    </script>
+
+</body>
+
+</html>

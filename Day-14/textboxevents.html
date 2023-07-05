@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <input type="text" id="focus" placeholder="enter focus event"><hr/>
+    <input type="text" id="blur" placeholder="enter blur event"><hr/>
+    <input type="text" id="keypress" placeholder="enter keypress event"><hr/>
+    <input type="text" id="keyup" placeholder="enter keyup event"><hr/>
+
+
+
+    <script>
+        $(docuent).ready(function(){
+            $("#focus").focus(function(){
+                $(this).css('background-color',"red");
+            });
+            $('#blur').blur(function(){
+                $(this).css('background-color','yellow');
+
+            });
+            $('#keypress').keypress(function(){
+                alert($(this).val())
+            });
+            $('#keyup').keyup(function(){
+                alert($(this).val());
+            });
+        })
+    </script>
+</body>
+</html>
