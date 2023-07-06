@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            background-color: red;
+            height: 150px;
+            width: 150px;
+
+        }
+        .dd{
+            background-color: blue;
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="d" id="MyDiv">hello</div><hr/>
+    <div class="d" id="MyHomeDiv"><span>containment</span></div><hr/>
+    <div class="d" id="MyHorizontalDiv"><span>x-axis</span></div><hr/>
+    <div class="d" id="MyVerticalDiv"><span>y-axis</span></div><hr/>
+    <div class="d" id="MyFiftyPixel"><span>Fifty</span></div><hr/>
+    <div class="dd" id="MyThreeSecondDelayDiv"><span>delay</span></div><hr/>
+<script>
+    $(document).ready(function(){
+        $('#MyDiv').draggable();
+
+        $('#MyHomeDiv span').draggable({
+            containment:"#MyHomeDiv"
+        });
+        $("#MyHorizontalDiv span").draggable({
+            axis:"x"
+        });
+        $('#MyVerticalDiv span').draggable({
+            axis:"y"
+        });
+        $('#MyFiftyPixel span').draggable({
+            distance:"200"
+        });
+        $('#MyThreeSecondDelayDiv span').draggable({
+            delay:"3000"
+        });
+    
+    });
+</script>
+</body>
+</html>
