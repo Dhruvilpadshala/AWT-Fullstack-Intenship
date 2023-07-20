@@ -1,32 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-    // getting all values from the HTML form
-    if ($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])) {
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fbform</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="th.html">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+</head>
+<body>
+<div class="container"> 
+<h2>Feedback Form</h2>
+<div class="form">
+<form id="basic-form" method="post" action="index.php">
+<p>
+<label for="name">Name <span style="color: red;">*</span></label>
+<input id="name" name="name" minlength="3" type="text" required id="name">
+</p>
+<p>
+<label for="email">E-Mail <span style="color:red;">*</span></label>
+<input id="email" type="email" name="email" required>
+</p>
+<p>
+<label for="Contact">Contact <span style="color: red">*</span></label>
+<input id="Contact" type="Contact" name="Contact" required>
+</p>
+<p>
+<label for="Feedback">Feedback<span style="color:red;">*</span></label>
+<input id="Feedback" type="Feedback" name="Feedback" required>
+</p>
+<p>
+<input class="submit" type="submit" value="SUBMIT" id="submit">
+</p>
+</form>
+</div>
+</div>
+</body>
+<script src="script.js"></script>
 
-      // creating a connection
-      $con = mysqli_connect('localhost', 'root', '', 'sampledb')
-          or die("Connection failed!" . mysqli_connect_error());
-
-      if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["Contact"]) && isset($_POST["Feedback"])){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $Contact = $_POST['Contact'];
-        $Feedback = $_POST['Feedback'];
-
-
-        // using sql to create a data entry query
-        $sql = "INSERT INTO `feedback` ( id,name, Contact, email,Feedback) VALUES ('0'$name','$Contact','$email','$Feedback')";
-
-        // send query to the database to add values and confirm if successful
-        $rs = mysqli_query($con, $sql);
-        if($rs)
-        {
-            echo "Entries added!";
-        }
-    
-      }
-    }
-
-    
-
-?>
+</html>
